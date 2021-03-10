@@ -5,7 +5,28 @@
 
 // use require without a reference to ensure a file is bundled
 // require('./example')
+const authEvents = require('./auth/events')
+const forms = require('./templates/forms')
+const modals = require('./templates/staticmodals')
+
 
 $(() => {
-  // your JS code goes here
+  $('#user', '#login').hide()
+
+  $('#joinus').click(function () {
+    event.preventDefault()
+    $('#messages').modal().html(forms.signUpHtml)
+    $('#sign-up').on('submit', authEvents.onSignUp)
+    $('.close').click(function () {
+      $('#messages').hide()
+      $('.modal-backdrop').hide()
+    })
+    $('#clamp').click(function () {
+      $('#messages').hide()
+      $('.modal-backdrop').hide()
+    })
+    $('#messages').show()
+    $('.modal-backdrop').show()
+  })
+
 })
