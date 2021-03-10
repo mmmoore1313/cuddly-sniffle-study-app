@@ -12,8 +12,19 @@ const modals = require('./templates/staticmodals')
 
 $(() => {
   $('#user').hide()
-  $('#login)').hide()
 
+  $('#about').click(function () {
+    event.preventDefault()
+    $('#messages').modal().html(modals.aboutHtml)
+    $('.close').click(function () {
+      $('#messages').hide()
+      $('.modal-backdrop').hide()
+    })
+    $('#messages').show()
+    $('.modal-backdrop').show()
+  })
+
+  // signUp
   $('#joinus').click(function () {
     event.preventDefault()
     $('#messages').modal().html(forms.signUpHtml)
@@ -22,12 +33,20 @@ $(() => {
       $('#messages').hide()
       $('.modal-backdrop').hide()
     })
-    $('#clamp').click(function () {
+    $('#messages').show()
+    $('.modal-backdrop').show()
+  })
+
+  // login
+  $('.login').click(function () {
+    event.preventDefault()
+    $('#messages').modal().html(forms.loginHtml)
+    $('#sign-in').on('submit', authEvents.onSignIn)
+    $('.close').click(function () {
       $('#messages').hide()
       $('.modal-backdrop').hide()
     })
     $('#messages').show()
     $('.modal-backdrop').show()
   })
-
 })
