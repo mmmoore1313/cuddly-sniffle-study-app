@@ -13,7 +13,7 @@ const modals = require('./templates/staticmodals')
 $(() => {
   $('.user').hide()
 
-  $('#about').on('click', function () {
+  $('.about').on('click', function () {
     event.preventDefault()
     $('#messages').modal().html(modals.aboutHtml)
     $('.close').click(function () {
