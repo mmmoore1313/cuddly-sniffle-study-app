@@ -11,7 +11,8 @@ const modals = require('./templates/staticmodals')
 
 
 $(() => {
-  $('#user', '#login').hide()
+  $('#user').hide()
+  $('#login)').hide()
 
   $('#joinus').click(function () {
     event.preventDefault()
