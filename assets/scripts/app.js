@@ -53,7 +53,7 @@ $(() => {
 
   // log out
   $('body').delegate('#logOut', 'click', function () {
-    // console.log('click')
+    // ('click')
     $('#message').modal(forms.signOutHtml)
     $('#yeeah').on('click', authEvents.onSignOut)
     $('#naah').click(function () {
