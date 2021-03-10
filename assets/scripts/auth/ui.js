@@ -16,7 +16,8 @@ const signUpSuccess = function (response) {
 
 const signInSuccess = function (response) {
   store.user = response.user
-  $('#messages').html(modals.messagesHtml).text('Welcome back!').css('color', 'green')
+  $('#messages').html(modals.messagesHtml)
+  $('#heyyou').text('Welcome back!').css('color', 'green')
   $('.close').click(function () {
     $('#messages').hide()
     $('.modal-backdrop').hide()
