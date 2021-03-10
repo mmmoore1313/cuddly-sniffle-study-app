@@ -95,34 +95,41 @@ const signOutHtml = `
   </div>
 </div>
 `
-// const changePw = `
-// <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-//   <div class="modal-dialog modal-dialog-centered" role="document">
-//     <div class="modal-content">
-//       <div class="modal-header">
-//         <h5 class="modal-title" id="exampleModalLongTitle">Change Password</h5>
-//         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-//           <span aria-hidden="true">&times;</span>
-//         </button>
-//       </div>
-//       <form class="modal-body" id='change-password'>
-//         <input name='passwords[old]' type='password' placeholder='Old Password' required>
-//         <input name='passwords[new]' type='password' placeholder='New Password' required>
-//         <br>
-//         <button>
-//           Change Password
-//         </button>
-//       </form>
-//       <div class="modal-footer">
-//         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-//         </div>
-//       </div>
-//     </div>
-// `
+
+const changePw = `
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">
+        <h5 class="modal-title">
+          Change Password
+        </h5>
+        <button type="button" class="close" data-dismiss="modal">
+          &times;
+        </button>
+      </div>
+      <div class='modal-body'>
+        <form id='change-password'>
+          <input id="password" class='form-control' name='passwords[old]' type='password' placeholder='Old Password' required>
+          <input id="password" class='form-control' name='passwords[new]' type='password' placeholder='New Password' required>
+          <button type='submit'>
+            Change Password
+          </button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <p class='error'></p>
+        <button type="button" class="close" data-dismiss="modal">
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+`
 
 module.exports = {
   signUpHtml,
   loginHtml,
-  signOutHtml
-  // changePw
+  signOutHtml,
+  changePw
 }

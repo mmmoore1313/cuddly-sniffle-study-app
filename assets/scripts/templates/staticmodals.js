@@ -31,18 +31,18 @@ const aboutHtml = `
         &times;
       </button>
     </div>
-      <div class="modal-body" id='about-it'>
-        <p>
-          Study Better is an offshoot precursor app to help you study! Inspired by Anki and years of chatter between two buds, Study This is but one of many steps along the way to perfect memorization, which in turn is the keystone to rapid understanding!
-        </p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="close" data-dismiss="modal">
-          Close
-        </button>
-      </div>
+    <div class="modal-body" id='about-it'>
+      <p>
+        Study Better is an offshoot precursor app to help you study! Inspired by Anki and years of chatter between two buds, Study This is but one of many steps along the way to perfect memorization, which in turn is the keystone to rapid understanding!
+      </p>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="close" data-dismiss="modal">
+        Close
+      </button>
     </div>
   </div>
+</div>
 `
 //   <button class='front'>
 //     Back
