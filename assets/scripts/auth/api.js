@@ -17,12 +17,12 @@ const signIn = function (data) {
   })
 }
 
-const signOut = function () {
+const signOut = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/sign-out',
     method: 'DELETE',
+    url: config.apiUrl + '/sign-out',
     headers: {
-      Authorization: 'Bearer' + store.user.token
+      Authorization: 'Bearer ' + store.user.token
     }
   })
 }
