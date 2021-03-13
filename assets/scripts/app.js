@@ -11,8 +11,8 @@ const modals = require('./templates/staticmodals')
 
 
 $(() => {
-  $('.user').hide()
-
+  // $('.user').hide()
+  $('#yeeah').on('click', authEvents.onSignOut)
   $('.about').on('click', function () {
     event.preventDefault()
     $('#messages').modal().html(modals.aboutHtml)
@@ -52,13 +52,14 @@ $(() => {
   })
 
   // log out
-  $('body').delegate('#logOut', 'click', function () {
-    // ('click')
-    $('#message').modal(forms.signOutHtml)
-    $('#yeeah').on('click', authEvents.onSignOut)
-    $('#naah').click(function () {
-      event.preventDefault()
-      $('#message').html('')
-    })
-  })
+  // $('.user').on('show', '#logout', function () {
+  //   $('#logout').click(function () {
+  //     $('#message').modal(forms.signOutHtml)
+  //     $('#yeeah').on('click', authEvents.onSignOut)
+  //     $('#naah').click(function () {
+  //       event.preventDefault()
+  //       $('#message').html('')
+  //     })
+  //   })
+  // })
 })
