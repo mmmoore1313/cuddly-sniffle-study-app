@@ -11,25 +11,51 @@ const modals = require('./templates/staticmodals')
 
 
 $(() => {
-  // $('.user').hide()
-  $('#yeeah').on('click', authEvents.onSignOut)
+  $('.user').hide()
+
+  // about
   $('.about').on('click', function () {
     event.preventDefault()
     $('#messages').modal().html(modals.aboutHtml)
-    $('.close').click(function () {
+    $('.close').on('click', function () {
       $('#messages').hide()
       $('.modal-backdrop').hide()
     })
     $('#messages').show()
     $('.modal-backdrop').show()
   })
+  // change password
+  $('.user-settings').on('click', function () {
+    event.preventDefault()
+    $('#messages').modal().html(forms.changePw)
+    $('.close').on('click', function () {
+      $('#messages').hide()
+      $('.modal-backdrop').hide()
+    })
+    $('#messages').show()
+    $('.modal-backdrop').show()
+    $('#changePw').on('submit', authEvents.onChangePassword)
+  })
+
+  // log out
+  $('#log-out').on('click', function () {
+    event.preventDefault()
+    $('#messages').modal().html(forms.signOutHtml)
+    $('.close').on('click', function () {
+      $('#messages').hide()
+      $('.modal-backdrop').hide()
+    })
+    $('#messages').show()
+    $('.modal-backdrop').show()
+    $('#yeeah').on('click', authEvents.onSignOut)
+  })
 
   // signUp
-  $('#joinus').click(function () {
+  $('#joinus').on('click', function () {
     event.preventDefault()
     $('#messages').modal().html(forms.signUpHtml)
     $('#sign-up').on('submit', authEvents.onSignUp)
-    $('.close').click(function () {
+    $('.close').on('click', function () {
       $('#messages').hide()
       $('.modal-backdrop').hide()
     })
@@ -38,7 +64,7 @@ $(() => {
   })
 
   // login
-  $('#login').click(function () {
+  $('#login').on('click', function () {
     event.preventDefault()
     $('#messages').modal().html(forms.loginHtml)
     $('.close').click(function () {
@@ -50,16 +76,4 @@ $(() => {
     $('.modal-backdrop').show()
     $('#sign-in').on('submit', authEvents.onSignIn)
   })
-
-  // log out
-  // $('.user').on('show', '#logout', function () {
-  //   $('#logout').click(function () {
-  //     $('#message').modal(forms.signOutHtml)
-  //     $('#yeeah').on('click', authEvents.onSignOut)
-  //     $('#naah').click(function () {
-  //       event.preventDefault()
-  //       $('#message').html('')
-  //     })
-  //   })
-  // })
 })
