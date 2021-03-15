@@ -85,12 +85,12 @@ const signOutHtml = `
           <button type='submit' id='yeeah'>
             Yes
           </button>
-          <button type='buton' class='naah'>
-            No
-          </button>
         </div>
       </form>
-      <p class='error'></p>
+      <button type="button" class="close" data-dismiss="modal">
+        No
+      </button>
+      </div>
     </div>
   </div>
 </div>
@@ -109,12 +109,14 @@ const changePw = `
         </button>
       </div>
       <div class='modal-body'>
-        <form id='change-password'>
-          <input id="password" class='form-control' name='passwords[old]' type='password' placeholder='Old Password' required>
-          <input id="password" class='form-control' name='passwords[new]' type='password' placeholder='New Password' required>
-          <button type='submit'>
-            Change Password
-          </button>
+        <form id='changePw'>
+          <div class='form-group'>
+            <input type='password' name='passwords[old]' class="form-control" placeholder="Old Password" required>
+            <input name='passwords[new]' type='password' placeholder='New Password' class='form-control' required>
+            <button type='submit'>
+              Change Password
+            </button>
+          </div>
         </form>
       </div>
       <div class="modal-footer">
