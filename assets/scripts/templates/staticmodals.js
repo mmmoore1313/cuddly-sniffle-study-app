@@ -3,7 +3,6 @@ const messagesHtml = `
   <div class="modal-content">
     <div class="modal-header">
       <h5 class="modal-title">
-        Sign In
       </h5>
       <button type="button" class="close" data-dismiss="modal">
         &times;
@@ -11,7 +10,7 @@ const messagesHtml = `
     </div>
     <div class='modal-body' id='heyyou'>
     </div>
-    <div class='modal-footer'>
+    <div class='modal-footer' id='feet'>
       <button type='button' class='close' data-dismiss='modal'>
         Rodger dodger
       </button>
@@ -44,6 +43,11 @@ const aboutHtml = `
   </div>
 </div>
 `
+
+const cardbuttons = `
+<button class='create'>Create another Card</button>
+<button class='study'>Study</button>
+`
 //   <button class='front'>
 //     Back
 //   </button>
@@ -63,5 +67,6 @@ const aboutHtml = `
 
 module.exports = {
   messagesHtml,
-  aboutHtml
+  aboutHtml,
+  cardbuttons
 }
