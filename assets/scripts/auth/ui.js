@@ -43,7 +43,14 @@ const signOutSuccess = function () {
 }
 
 const changePasswordSuccess = function () {
-  $('#messages').text('Old passwords are like yesterdays pants; you changed them!')
+  $('#messages').html(modals.messagesHtml)
+  $('#heyyou').text('Old passwords are like yesterdays pants; you changed them!').css('color', 'green')
+  $('.close').on('click', function () {
+    $('#messages').hide()
+    $('.modal-backdrop').hide()
+  })
+  $('#messages').show()
+  $('.modal-backdrop').show()
   $('#changePw').trigger('reset')
 }
 
