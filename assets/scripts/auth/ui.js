@@ -4,6 +4,7 @@ const modals = require('../templates/staticmodals')
 
 const signUpSuccess = function (response) {
   $('#messages').modal().html(modals.messagesHtml)
+  $('.modal-title').text('Signed Up!').css('color', 'black')
   $('#heyyou').html('Thanks for joining us! Click Login to start!')
   $('.close').on('click', function () {
     $('#messages').hide()
@@ -16,6 +17,7 @@ const signUpSuccess = function (response) {
 const signInSuccess = function (response) {
   store.user = response.user
   $('#messages').html(modals.messagesHtml)
+  $('.modal-title').text('Howdy!').css('color', 'black')
   $('#heyyou').text('Welcome back!').css('color', 'green')
   $('.close').on('click', function () {
     $('#messages').hide()
@@ -30,6 +32,7 @@ const signInSuccess = function (response) {
 
 const signOutSuccess = function () {
   $('#messages').html(modals.messagesHtml)
+  $('.modal-title').text('Buh-Bye!').css('color', 'black')
   $('#heyyou').text('You will be back... They always come back...')
   $('.close').on('click', function () {
     $('#messages').hide()
@@ -44,6 +47,7 @@ const signOutSuccess = function () {
 
 const changePasswordSuccess = function () {
   $('#messages').html(modals.messagesHtml)
+  $('.modal-title').text('Locks Changed!').css('color', 'black')
   $('#heyyou').text('Old passwords are like yesterdays pants; you changed them!').css('color', 'green')
   $('.close').on('click', function () {
     $('#messages').hide()
