@@ -1,3 +1,37 @@
+
+const createCardHtml = `
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">
+        Create a card
+      </h5>
+      <button type="button" class="close" data-dismiss="modal">
+        &times;
+      </button>
+    </div>
+    <div class='modal-body'>
+      <form id='newterm'>
+        <p>Term:</p>
+        <input type='text' name='card[term]' placeholder='Add term' class='form-control' required>
+        <p>Definition:</p>
+        <input type='text' name='card[definition]' placeholder='Add definition' class='form-control' required>
+        <button type='submit'>
+          Create
+        </button>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <p class='error'></p>
+      <button type="button" class="close" data-dismiss="modal">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+`
+
+
 const signUpHtml = `
 <div class="modal-dialog">
   <div class="modal-content">
@@ -133,5 +167,6 @@ module.exports = {
   signUpHtml,
   loginHtml,
   signOutHtml,
-  changePw
+  changePw,
+  createCardHtml
 }
