@@ -2,9 +2,11 @@ const store = require('./../store')
 const forms = require('../templates/forms')
 const modals = require('../templates/staticmodals')
 
+
 const createCardSuccess = function (response) {
-  $('#messages').modal().html(modals.messagesHtml)
-  $('#heyyou').html('Study aid forged! Click Review to start studying!')
+  $('#messages').modal().html(forms.createCardHtml)
+  $('.modal-title').text('Card Created!').css('color', 'black')
+
   $('.close').on('click', function () {
     $('#messages').hide()
     $('.modal-backdrop').hide()
