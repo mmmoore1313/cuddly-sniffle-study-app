@@ -6,12 +6,25 @@
 // use require without a reference to ensure a file is bundled
 // require('./example')
 const authEvents = require('./auth/events')
+const cardEvents = require('./card/events')
 const forms = require('./templates/forms')
 const modals = require('./templates/staticmodals')
 
 
 $(() => {
   $('.user').hide()
+
+  // create card
+  $('.create').on('click', function () {
+    $('#messages').modal().html(forms.createCardHtml)
+    $('.close').on('click', function () {
+      $('#messages').hide()
+      $('.modal-backdrop').hide()
+    })
+    $('#messages').show()
+    $('.modal-backdrop').show()
+    $('#newterm').on('submit', cardEvents.onCreateCard)
+  })
 
   // about
   $('.about').on('click', function () {
