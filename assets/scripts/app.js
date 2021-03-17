@@ -12,11 +12,10 @@ const modals = require('./templates/staticmodals')
 
 
 $(() => {
-  $('.user').hide()
-
   // create card
   $('.create').on('click', function () {
     $('#messages').modal().html(forms.createCardHtml)
+    $('.modal-title').text('Create a Card').css('color', 'black')
     $('.close').on('click', function () {
       $('#messages').hide()
       $('.modal-backdrop').hide()
@@ -30,6 +29,7 @@ $(() => {
   $('.about').on('click', function () {
     event.preventDefault()
     $('#messages').modal().html(modals.aboutHtml)
+    $('.modal-title').text('About Us').css('color', 'black')
     $('.close').on('click', function () {
       $('#messages').hide()
       $('.modal-backdrop').hide()
@@ -41,6 +41,7 @@ $(() => {
   $('.user-settings').on('click', function () {
     event.preventDefault()
     $('#messages').modal().html(forms.changePw)
+    $('.modal-title').text('User Settings').css('color', 'black')
     $('.close').on('click', function () {
       $('#messages').hide()
       $('.modal-backdrop').hide()
@@ -54,6 +55,7 @@ $(() => {
   $('#log-out').on('click', function () {
     event.preventDefault()
     $('#messages').modal().html(forms.signOutHtml)
+    $('.modal-title').text('Is it something we said?').css('color', 'black')
     $('.close').on('click', function () {
       $('#messages').hide()
       $('.modal-backdrop').hide()
@@ -89,4 +91,5 @@ $(() => {
     $('.modal-backdrop').show()
     $('#sign-in').on('submit', authEvents.onSignIn)
   })
+  $('.user').hide()
 })
