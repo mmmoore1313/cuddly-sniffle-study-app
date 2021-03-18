@@ -12,6 +12,16 @@ const modals = require('./templates/staticmodals')
 
 
 $(() => {
+  // index card
+  $('#organize').on('click', cardEvents.onIndexCard)
+  $('#organize').on('click', function () {
+    $('.user').hide()
+    $('#index').show()
+  })
+
+  // Destroy card
+
+
   // create card
   $('.create').on('click', function () {
     $('#messages').modal().html(forms.createCardHtml)

@@ -12,6 +12,22 @@ const onCreateCard = function (event) {
     .catch(ui.cardFailure)
 }
 
+const onIndexCard = function (event) {
+  api.index()
+    .then(ui.onIndexSuccess)
+    .catch(ui.cardFailure)
+}
+
+const onDestroyCard = function (event) {
+  const form = event.target
+  const formData = getFormFields(form)
+
+  api.del(formData.card.id)
+    .then(ui.deleteSuccess)
+    .catch(ui.cardFailure)
+}
 module.exports = {
-  onCreateCard
+  onCreateCard,
+  onIndexCard,
+  onDestroyCard
 }

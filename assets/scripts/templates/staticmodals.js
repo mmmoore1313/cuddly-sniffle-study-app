@@ -43,7 +43,20 @@ const aboutHtml = `
   </div>
 </div>
 `
-
+// const cardIndexHtml = `
+// <table id='cardindex'>
+//   <tr>
+//     <th>Term</th>
+//     <th>Definition</th>
+//     <th>ID</th>
+//   </tr>
+//   <tr>
+//     <td>${card.term}</td>
+//     <td>${card.definition}</td>
+//     <td>${card._id}</td>
+//   </tr>
+// </table>
+// `
 const cardbuttons = `
 <button class='create'>Create another Card</button>
 <button class='study'>Study</button>
@@ -69,4 +82,5 @@ module.exports = {
   messagesHtml,
   aboutHtml,
   cardbuttons
+  // cardIndexHtml
 }
