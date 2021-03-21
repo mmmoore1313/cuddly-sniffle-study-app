@@ -79,6 +79,7 @@ $(() => {
     $('#messages').show()
     $('.modal-backdrop').show()
   })
+
   // change password
   $('.user-settings').on('click', function () {
     event.preventDefault()
