@@ -22,27 +22,25 @@ const onIndexSuccess = function (responseData) {
   let cardsHtml = ''
   cards.forEach(card => {
     cardsHtml += `
-    <table id='cardindex'>
-      <tr>
-        <th>Term</th>
-        <th>Definition</th>
-        <th>ID</th>
-      </tr>
-      <tr>
-        <td>${card.term}</td>
-        <td>${card.definition}</td>
-        <td><button name=${card._id} id='view'>View Card</button></td>
-        <td><button class='card-destroy' name=${card._id}>Delete</button></td>
-      </tr>
-    </table>
+    <tr>
+      <td>${card.term}</td>
+      <td>${card.definition}</td>
+      <td>${card._id}</td>
+      <td><button name=${card._id} class='view'>View Card</button></td>
+      <td><button class='destroy' data-id=${card._id}>Delete</button></td>
+      <td><button type="button" id="close">Close</button></td>
+    </tr>
     `
   })
   $('#index').html(cardsHtml)
-  $('.card-destroy').on('click', cardEvents.onDestroyCard)
-  $('#view').on('click', function () {
-
+  // $('.destroy').on('click', cardEvents.onDestroyCard)
+  $('.view').on('click', function () {
+    console.log('this should show one card')
   })
-  // $('#heyyou').html(cardsHtml)
+  $('#close').on('click', function () {
+    $('.user').show()
+    $('.table').hide()
+  })
 }
 
 const deleteSuccess = function (responseData) {
