@@ -2,7 +2,6 @@ const config = require('../config')
 const store = require('../store')
 
 const createCard = function (data) {
-  console.log(data)
   return $.ajax({
     method: 'POST',
     url: config.apiUrl + '/cards',
@@ -23,15 +22,16 @@ const index = function () {
   })
 }
 
-const del = function () {
+const del = function (id) {
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + '/cards',
+    url: config.apiUrl + '/cards/' + id,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
   })
 }
+
 module.exports = {
   createCard,
   index,
