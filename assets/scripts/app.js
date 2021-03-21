@@ -16,11 +16,11 @@ $(() => {
   $('#organize').on('click', cardEvents.onIndexCard)
   $('#organize').on('click', function () {
     $('.user').hide()
-    $('#index').show()
+    $('.table').show()
   })
 
   // Destroy card
-
+  $('#index').on('click', '.destroy', cardEvents.onDestroyCard)
 
   // create card
   $('.create').on('click', function () {
@@ -43,6 +43,7 @@ $(() => {
     $('.close').on('click', function () {
       $('#messages').hide()
       $('.modal-backdrop').hide()
+      $('body').removeClass('modal-open')
     })
     $('#messages').show()
     $('.modal-backdrop').show()
@@ -102,4 +103,5 @@ $(() => {
     $('#sign-in').on('submit', authEvents.onSignIn)
   })
   $('.user').hide()
+  $('.table').hide()
 })
