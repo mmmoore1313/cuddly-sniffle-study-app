@@ -10,7 +10,7 @@ const signUpSuccess = function (response) {
     $('#messages').hide()
     $('.modal-backdrop').hide()
   })
-
+  $('body').removeClass('modal-open')
   $('#signup').trigger('reset')
 }
 
@@ -27,6 +27,7 @@ const signInSuccess = function (response) {
   })
   $('#messages').show()
   $('.modal-backdrop').show()
+  $('body').removeClass('modal-open')
   $('#sign-in').trigger('reset')
 }
 
@@ -42,6 +43,7 @@ const signOutSuccess = function () {
   })
   $('#messages').show()
   $('.modal-backdrop').show()
+  $('body').removeClass('modal-open')
   store.user = null
 }
 
@@ -55,6 +57,7 @@ const changePasswordSuccess = function () {
   })
   $('#messages').show()
   $('.modal-backdrop').show()
+  $('body').removeClass('modal-open')
   $('#changePw').trigger('reset')
 }
 
