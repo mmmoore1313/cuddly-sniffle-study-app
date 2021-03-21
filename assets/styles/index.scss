@@ -8,23 +8,33 @@ $font-color: $light;
 
 body {
   background-color: $body-bg-color;
-  // display: flex;
-}
-#title {
-  text-align: center;
-}
-
-
-.box {
-  align-items: center;
-  background-color: $secondary;
-  border: 1px solid $white;
-  color: $font-color;
   display: flex;
-  height: 80px;
-  justify-content: center;
+  overflow: scroll;
 }
 
-.alt-color {
-  background-color: $alt-color;
+.modal {
+  overflow-y: scroll;
 }
+
+.modal-body {
+  overflow-y: scroll;
+}
+// .container
+// #title {
+//   text-align: center;
+// }
+
+//
+// .box {
+//   align-items: center;
+//   background-color: $secondary;
+//   border: 1px solid $white;
+//   color: $font-color;
+//   display: flex;
+//   height: 80px;
+//   justify-content: center;
+// }
+
+// .alt-color {
+//   background-color: $alt-color;
+// }
