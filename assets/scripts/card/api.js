@@ -4,7 +4,7 @@ const store = require('../store')
 const createCard = function (data) {
   return $.ajax({
     method: 'POST',
-    url: config.apiUrl + '/cards' + store.card._id,
+    url: config.apiUrl + '/cards',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
