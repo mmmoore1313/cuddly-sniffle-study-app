@@ -19,13 +19,13 @@ const onIndexCard = function (event) {
 }
 
 const onDestroyCard = function (event) {
-  const form = event.target
-  const formData = getFormFields(form)
-
-  api.del(formData.card.id)
+  const deleteButton = event.target
+  const id = $(deleteButton).data('id')
+  api.del(id)
     .then(ui.deleteSuccess)
     .catch(ui.cardFailure)
 }
+
 module.exports = {
   onCreateCard,
   onIndexCard,
