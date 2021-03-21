@@ -1,4 +1,34 @@
-
+const updateHtml = `
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h5 class="modal-title">
+        Update Term
+      </h5>
+      <button type="button" class="close" data-dismiss="modal">
+        &times;
+      </button>
+    </div>
+    <div class='modal-body'>
+      <form id='updateTerm'>
+        <p>Term:</p>
+        <input type='text' name='card[term]' placeholder='Change Term' class='form-control' >
+        <p>Definition:</p>
+        <input type='text' name='card[definition]' placeholder='Change definition' class='form-control' >
+        <button type='submit' class='again'>
+          Update
+        </button>
+      </form>
+    </div>
+    <div class="modal-footer">
+      <p class='error'></p>
+      <button type="button" class="close" data-dismiss="modal">
+        Close
+      </button>
+    </div>
+  </div>
+</div>
+`
 const createCardHtml = `
 <div class="modal-dialog">
   <div class="modal-content">
@@ -16,7 +46,7 @@ const createCardHtml = `
         <input type='text' name='card[term]' placeholder='Add term' class='form-control' required>
         <p>Definition:</p>
         <input type='text' name='card[definition]' placeholder='Add definition' class='form-control' required>
-        <button type='submit'>
+        <button type='submit' class='again'>
           Create
         </button>
       </form>
@@ -30,7 +60,6 @@ const createCardHtml = `
   </div>
 </div>
 `
-
 
 const signUpHtml = `
 <div class="modal-dialog">
@@ -168,5 +197,6 @@ module.exports = {
   loginHtml,
   signOutHtml,
   changePw,
-  createCardHtml
+  createCardHtml,
+  updateHtml
 }

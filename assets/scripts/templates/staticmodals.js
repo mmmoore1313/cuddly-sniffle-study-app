@@ -11,9 +11,6 @@ const messagesHtml = `
     <div class='modal-body' id='heyyou'>
     </div>
     <div class='modal-footer' id='feet'>
-      <button type='button' class='close' data-dismiss='modal'>
-        Rodger dodger
-      </button>
     </div>
   </div>
 </div>
@@ -60,27 +57,25 @@ const aboutHtml = `
 const cardbuttons = `
 <button class='create'>Create another Card</button>
 <button class='study'>Study</button>
+<button class='close'>Close</button>
 `
-//   <button class='front'>
-//     Back
-//   </button>
-//   <button class='home'>
-//     Home
-//   </button>
-// </div>
-// <div id='stats'>
-//   <button id='games-index'>
-//     All games
-//   </button>
-//   <button class='home'>
-//     Home
-//   </button>
-//
-// </div>
+const closeButton = `
+<button class='closeModal'>Close</button>`
+
+// const updateButtons = `
+// `
+// $('.modal-title').text(`${card.term}`).css('color', 'black')
+// $('.modal-body').text(`${card.definition}`).css('color', 'black')
+// $('.modal-footer').text(`
+//   <button class='destroy' data-id=${card._id}>Delete</button>
+//   <button class='update' data-id=${card._id}>Update</button>
+//   <button class='closeModal'>Close</button>
+// `)
 
 module.exports = {
   messagesHtml,
   aboutHtml,
-  cardbuttons
+  cardbuttons,
+  closeButton
   // cardIndexHtml
 }

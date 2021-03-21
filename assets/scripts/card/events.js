@@ -13,12 +13,16 @@ const onCreateCard = function (event) {
 }
 
 const onIndexCard = function (event) {
+  event.preventDefault()
+
   api.index()
     .then(ui.onIndexSuccess)
     .catch(ui.cardFailure)
 }
 
 const onDestroyCard = function (event) {
+  event.preventDefault()
+
   const deleteButton = event.target
   const id = $(deleteButton).data('id')
   api.del(id)
@@ -26,8 +30,32 @@ const onDestroyCard = function (event) {
     .catch(ui.cardFailure)
 }
 
+const onShowCard = function (event) {
+  event.preventDefault()
+
+  const showButton = event.target
+  const id = $(showButton).data('id')
+
+  api.show(id)
+    .then(ui.showSuccess)
+    .catch(ui.cardFailure)
+}
+
+const onUpdate = function (event) {
+  event.preventDefault()
+
+  const formData = getFormFields(event.target)
+  const id = formData.card.id
+
+  api.update(id, formData)
+    .then(ui.updateCardSuccess)
+    .catch(ui.cardFailure)
+}
+
 module.exports = {
   onCreateCard,
   onIndexCard,
-  onDestroyCard
+  onDestroyCard,
+  onShowCard,
+  onUpdate
 }

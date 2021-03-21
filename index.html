@@ -41,7 +41,7 @@
             <button class='create'>
               Create
             </button>
-            <button id='organize'>
+            <button class='organize'>
               Organize
             </button>
             <hr>
@@ -58,15 +58,29 @@
             </button>
 
           </div>
-          <table class='table'>
+          <table class='table' id='indexTable'>
             <thead>
               <tr>
                 <th scope='col'>Term</th>
                 <th scope='col'>Definition</th>
                 <th scope='col'>Options</th>
+                <th scope='col'><button class='organize'>Reload</button></th>
+                <th scope='col'><button id='back'>Back</button></th>
               </tr>
             </thead>
             <tbody id='index'>
+            </tbody>
+          </table>
+          <table class='table' id='showTable'>
+            <thead>
+              <tr>
+                <th scope='col'>Term</th>
+                <th scope='col'>Definition</th>
+                <th scope='col'>Options</th>
+                <th scope='col'><button class='organize'>Back</button></th>
+              </tr>
+            </thead>
+            <tbody id='show'>
             </tbody>
           </table>
         </div>

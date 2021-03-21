@@ -5,15 +5,28 @@ const cardEvents = require('./events')
 
 
 const createCardSuccess = function (response) {
-  $('#messages').modal().html(forms.createCardHtml)
+  $('#messages').modal().html(modals.messagesHtml)
   $('.modal-title').text('Card Created!').css('color', 'black')
-
+  $('.modal-body').text('Success! Create another or start to study!').css('color', 'green')
+  $('.modal-footer').html(modals.cardbuttons)
   $('.close').on('click', function () {
     $('#messages').hide()
     $('.modal-backdrop').hide()
+    // $('body').removeClass('modal-open')
   })
-
-  $('#newterm').trigger('reset')
+  $('.modal-footer').on('click', '.create', function () {
+    event.preventDefault()
+    $('#messages').modal().html(forms.createCardHtml)
+    $('.modal-title').text('Create a Card').css('color', 'black')
+    $('.close').on('click', function () {
+      $('#messages').hide()
+      $('.modal-backdrop').hide()
+      // $('body').removeClass('modal-open')
+    })
+    $('#messages').show()
+    $('.modal-backdrop').show()
+    $('#newterm').on('submit', cardEvents.onCreateCard)
+  })
 }
 
 const onIndexSuccess = function (responseData) {
@@ -25,19 +38,15 @@ const onIndexSuccess = function (responseData) {
     <tr>
       <td>${card.term}</td>
       <td>${card.definition}</td>
-      <td>${card._id}</td>
-      <td><button name=${card._id} class='view'>View Card</button></td>
+      <td><button class='view' data-id=${card._id}>View Card</button></td>
       <td><button class='destroy' data-id=${card._id}>Delete</button></td>
-      <td><button type="button" id="close">Close</button></td>
+      <td><button class='update' data-id=${card._id}>Update</button></td>
     </tr>
     `
   })
   $('#index').html(cardsHtml)
-  // $('.destroy').on('click', cardEvents.onDestroyCard)
-  $('.view').on('click', function () {
-    console.log('this should show one card')
-  })
-  $('#close').on('click', function () {
+
+  $('#back').on('click', function () {
     $('.user').show()
     $('.table').hide()
   })
@@ -46,22 +55,52 @@ const onIndexSuccess = function (responseData) {
 const deleteSuccess = function (responseData) {
   $('#messages').modal().html(modals.messagesHtml)
   $('.modal-title').text('Card Deleted!').css('color', 'red')
-  $('#heyyou').text('Deletion Successful').css('color', 'red')
-  $('.close').on('click', function () {
+  $('#heyyou').html('Deletion Successful! Click Reload to update!').css('color', 'red')
+  $('.modal-footer').html(modals.closeButton)
+  $('.closeModal').on('click', function () {
     $('#messages').hide()
     $('.modal-backdrop').hide()
+    $('body').removeClass('modal-open')
   })
   $('#messages').show()
   $('.modal-backdrop').show()
 }
+
+const showSuccess = function (responseData) {
+  const card = responseData.card
+  const showHtml = `
+    <tr>
+      <td>${card.term}</td>
+      <td>${card.definition}</td>
+      <td><button class='destroy' data- id=${card._id}>Delete</button></td>
+      <td><button class='update' data-id=${card._id}>Update</button></td>
+    </tr>`
+  $('#showTable').show()
+  $('#show').html(showHtml)
+  $('#indexTable').hide()
+}
+
 const cardFailure = function (response) {
   $('.error').text('Something went wrong. Please try again.').css('color', 'red')
   $('form').trigger('reset')
 }
 
+const updateCardSuccess = function (responseData) {
+  $('#messages').modal().html(modals.messagesHtml)
+  $('.modal-title').text('Card Created!').css('color', 'black')
+  $('.modal-body').text('Success! Term Updated!').css('color', 'green')
+  $('.modal-footer').html(modals.closeButton)
+  $('.close').on('click', function () {
+    $('#messages').hide()
+    $('.modal-backdrop').hide()
+    $('body').removeClass('modal-open')
+  })
+}
 module.exports = {
   createCardSuccess,
   onIndexSuccess,
   cardFailure,
-  deleteSuccess
+  deleteSuccess,
+  showSuccess,
+  updateCardSuccess
 }

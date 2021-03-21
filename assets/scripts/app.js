@@ -13,22 +13,53 @@ const modals = require('./templates/staticmodals')
 
 $(() => {
   // index card
-  $('#organize').on('click', cardEvents.onIndexCard)
-  $('#organize').on('click', function () {
+  $('.organize').on('click', cardEvents.onIndexCard)
+  $('.organize').on('click', function () {
     $('.user').hide()
-    $('.table').show()
+    $('#indexTable').show()
+    $('#showTable').hide()
   })
 
   // Destroy card
   $('#index').on('click', '.destroy', cardEvents.onDestroyCard)
 
+  // Show Card
+  $('#index').on('click', '.view', cardEvents.onShowCard)
+
+  // Update card
+  $('#index').on('click', '.update', function () {
+    event.preventDefault()
+    $('#messages').modal().html(forms.updateHtml)
+    $('.close').on('click', function () {
+      $('#messages').hide()
+      $('.modal-backdrop').hide()
+    })
+    $('#messages').show()
+    $('.modal-backdrop').show()
+    $('#updateTerm').on('submit', cardEvents.onUpdate)
+  })
+
+  $('#show').on('click', '.update', function () {
+    event.preventDefault()
+    $('#messages').modal().html(forms.updateHtml)
+    $('.close').on('click', function () {
+      $('#messages').hide()
+      $('.modal-backdrop').hide()
+    })
+    $('#messages').show()
+    $('.modal-backdrop').show()
+    $('#updateTerm').on('submit', cardEvents.onUpdate)
+  })
+
   // create card
   $('.create').on('click', function () {
+    event.preventDefault()
     $('#messages').modal().html(forms.createCardHtml)
     $('.modal-title').text('Create a Card').css('color', 'black')
     $('.close').on('click', function () {
       $('#messages').hide()
       $('.modal-backdrop').hide()
+      // $('body').removeClass('modal-open')
     })
     $('#messages').show()
     $('.modal-backdrop').show()
@@ -56,6 +87,7 @@ $(() => {
     $('.close').on('click', function () {
       $('#messages').hide()
       $('.modal-backdrop').hide()
+      $('body').removeClass('modal-open')
     })
     $('#messages').show()
     $('.modal-backdrop').show()
@@ -70,6 +102,7 @@ $(() => {
     $('.close').on('click', function () {
       $('#messages').hide()
       $('.modal-backdrop').hide()
+      $('body').removeClass('modal-open')
     })
     $('#messages').show()
     $('.modal-backdrop').show()
@@ -84,6 +117,7 @@ $(() => {
     $('.close').on('click', function () {
       $('#messages').hide()
       $('.modal-backdrop').hide()
+      $('body').removeClass('modal-open')
     })
     $('#messages').show()
     $('.modal-backdrop').show()
@@ -97,6 +131,7 @@ $(() => {
       $('#messages').hide()
       $('.modal-backdrop').hide()
       $('.front').show()
+      $('body').removeClass('modal-open')
     })
     $('#messages').show()
     $('.modal-backdrop').show()

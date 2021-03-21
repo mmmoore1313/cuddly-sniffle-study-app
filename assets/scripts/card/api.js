@@ -4,7 +4,7 @@ const store = require('../store')
 const createCard = function (data) {
   return $.ajax({
     method: 'POST',
-    url: config.apiUrl + '/cards',
+    url: config.apiUrl + '/cards' + store.card._id,
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
@@ -24,16 +24,39 @@ const index = function () {
 
 const del = function (id) {
   return $.ajax({
-    method: 'DELETE',
     url: config.apiUrl + '/cards/' + id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    id
+  })
+}
+
+const show = function (id) {
+  return $.ajax({
+    url: config.apiUrl + '/cards/' + store.card._id,
+    method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
   })
 }
 
+const update = function (id, formData) {
+  return $.ajax({
+    url: config.apiUrl + '/cards/' + id,
+    method: 'PATCH',
+    headers: {
+      Authorization: 'Bearer ' + store.user.token
+    },
+    formData
+  })
+}
 module.exports = {
   createCard,
   index,
-  del
+  del,
+  show,
+  update
 }

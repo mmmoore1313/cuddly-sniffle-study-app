@@ -6,6 +6,7 @@ const signUpSuccess = function (response) {
   $('#messages').modal().html(modals.messagesHtml)
   $('.modal-title').text('Signed Up!').css('color', 'black')
   $('#heyyou').html('Thanks for joining us! Click Login to start!')
+  $('.modal-footer').html(modals.closeButton)
   $('.close').on('click', function () {
     $('#messages').hide()
     $('.modal-backdrop').hide()
@@ -19,7 +20,8 @@ const signInSuccess = function (response) {
   $('#messages').html(modals.messagesHtml)
   $('.modal-title').text('Howdy!').css('color', 'black')
   $('#heyyou').text('Welcome back!').css('color', 'green')
-  $('.close').on('click', function () {
+  $('.modal-footer').html(modals.closeButton)
+  $('.closeModal').on('click', function () {
     $('#messages').hide()
     $('.modal-backdrop').hide()
     $('.user').show()
