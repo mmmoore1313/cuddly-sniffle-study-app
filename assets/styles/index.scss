@@ -11,6 +11,32 @@ body {
   display: flex;
   overflow: scroll;
 }
+.bd-navbar {
+  padding: .75rem 0;
+  background-color: #7952b3;
+  display: flex;
+  flex-grow: 1;
+  position: fixed;
+  background-color: black;
+}
+.front {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top: 20%;
+}
+.user {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  margin: auto;
+  padding-top: 20%;
+}
 
 .modal {
   overflow-y: scroll;
