@@ -28,7 +28,7 @@ const del = function (id) {
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
-    },
+    }
   })
 }
 
