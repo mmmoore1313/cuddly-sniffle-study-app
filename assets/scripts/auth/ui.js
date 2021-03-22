@@ -7,7 +7,7 @@ const signUpSuccess = function (response) {
   $('.modal-title').text('Signed Up!').css('color', 'black')
   $('#heyyou').html('Thanks for joining us! Click Login to start!')
   $('.modal-footer').html(modals.closeButton)
-  $('.close').on('click', function () {
+  $('.closeModal').on('click', function () {
     $('#messages').hide()
     $('.modal-backdrop').hide()
   })
