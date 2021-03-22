@@ -29,13 +29,12 @@ const del = function (id) {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    id
   })
 }
 
 const show = function (id) {
   return $.ajax({
-    url: config.apiUrl + '/cards/' + store.card._id,
+    url: config.apiUrl + '/cards/' + id,
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -50,7 +49,7 @@ const update = function (id, formData) {
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
-    formData
+    data: formData
   })
 }
 module.exports = {

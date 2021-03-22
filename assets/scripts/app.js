@@ -21,6 +21,8 @@ $(() => {
   })
 
   // Destroy card
+
+  $('#show').on('click', '.destroy', cardEvents.onDestroyCard)
   $('#index').on('click', '.destroy', cardEvents.onDestroyCard)
 
   // Show Card

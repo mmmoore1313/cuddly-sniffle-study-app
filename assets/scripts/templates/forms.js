@@ -11,6 +11,8 @@ const updateHtml = `
     </div>
     <div class='modal-body'>
       <form id='updateTerm'>
+        <p>Term ID:</p>
+        <input type='text' name='card[id]'class='form-control' placeholder='Type the term Id here'>
         <p>Term:</p>
         <input type='text' name='card[term]' placeholder='Change Term' class='form-control' >
         <p>Definition:</p>
@@ -40,7 +42,7 @@ const createCardHtml = `
         &times;
       </button>
     </div>
-    <div class='modal-body'>
+    <div class='modal-body' id='createform'>
       <form id='newterm'>
         <p>Term:</p>
         <input type='text' name='card[term]' placeholder='Add term' class='form-control' required>

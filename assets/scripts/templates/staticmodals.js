@@ -40,28 +40,18 @@ const aboutHtml = `
   </div>
 </div>
 `
-// const cardIndexHtml = `
-// <table id='cardindex'>
-//   <tr>
-//     <th>Term</th>
-//     <th>Definition</th>
-//     <th>ID</th>
-//   </tr>
-//   <tr>
-//     <td>${card.term}</td>
-//     <td>${card.definition}</td>
-//     <td>${card._id}</td>
-//   </tr>
-// </table>
-// `
 const cardbuttons = `
 <button class='create'>Create another Card</button>
 <button class='study'>Study</button>
 <button class='close'>Close</button>
 `
 const closeButton = `
-<button class='closeModal'>Close</button>`
+<button class='closeModal'>Close</button>
+`
 
+const indexButton = `
+<button class='organize'>Close</button>
+`
 // const updateButtons = `
 // `
 // $('.modal-title').text(`${card.term}`).css('color', 'black')
@@ -76,6 +66,6 @@ module.exports = {
   messagesHtml,
   aboutHtml,
   cardbuttons,
-  closeButton
-  // cardIndexHtml
+  closeButton,
+  indexButton
 }
