@@ -10,7 +10,6 @@ const cardEvents = require('./card/events')
 const forms = require('./templates/forms')
 const modals = require('./templates/staticmodals')
 
-
 $(() => {
   // index card
   $('.organize').on('click', cardEvents.onIndexCard)
