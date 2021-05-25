@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Study Better</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+      <header class="navbar navbar-expand-md navbar-dark bd-navbar">
+        <div class="container-fluid">
+          <span class="navbar-brand mb-0 h1">
+            <h1>Study Better</h1>
+          </span>
+        </div>
+      </header>
+      <div class='container mt-5'>
+        <div class='row'>
+          <div class='front'>
+            <button type='button' id='joinus'>
+              Sign-up
+            </button>
+            <hr>
+            <button id='login'>
+              Login
+            </button>
+            <hr>
+            <button class='about'>
+              About
+            </button>
+          </div>
+          <div class='user'>
+            <button class='create'>
+              Create
+            </button>
+            <button class='organize'>
+              Organize
+            </button>
+            <button class='user-settings'>
+              User Settings
+            </button>
+            <button class='about'>
+              About
+            </button>
+            <button id='log-out'>
+              Sign out
+            </button>
+          </div>
+          <table class='table' id='indexTable'>
+            <thead>
+              <tr>
+                <th scope='col'>Term</th>
+                <th scope='col'>Definition</th>
+                <th scope='col'>Term Id</th>
+                <th scope='col'>Options</th>
+                <th scope='col'><button class='organize'>Reload</button></th>
+                <th scope='col'><button id='back'>Back</button></th>
+              </tr>
+            </thead>
+            <tbody id='index'>
+            </tbody>
+          </table>
+          <table class='table' id='showTable'>
+            <thead>
+              <tr>
+                <th scope='col'>Term</th>
+                <th scope='col'>Definition</th>
+                <th scope='col'>Term Id</th>
+                <th scope='col'>Options</th>
+                <th scope='col'><button class='organize'>Back</button></th>
+              </tr>
+            </thead>
+            <tbody id='show'>
+            </tbody>
+          </table>
+        </div>
+        <div id='messages' class="modal fade" role="dialog">
+        </div>
+      </div>
+    </body>
+</html>
