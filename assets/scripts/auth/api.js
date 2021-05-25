@@ -4,7 +4,7 @@ const store = require('../store')
 const signUp = function (data) {
   return $.ajax({
     method: 'POST',
-    url: config.apiUrl + '/sign-up',
+    url: config.apiUrl + 'sign-up',
     data: data
   })
 }
@@ -12,7 +12,7 @@ const signUp = function (data) {
 const signIn = function (data) {
   return $.ajax({
     method: 'POST',
-    url: config.apiUrl + '/sign-in',
+    url: config.apiUrl + 'sign-in',
     data: data
   })
 }
@@ -20,7 +20,7 @@ const signIn = function (data) {
 const signOut = function (data) {
   return $.ajax({
     method: 'DELETE',
-    url: config.apiUrl + '/sign-out',
+    url: config.apiUrl + 'sign-out',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     }
@@ -30,7 +30,7 @@ const signOut = function (data) {
 const changePassword = function (data) {
   return $.ajax({
     method: 'PATCH',
-    url: config.apiUrl + '/change-password',
+    url: config.apiUrl + 'change-password',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
