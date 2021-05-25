@@ -4,7 +4,7 @@ const store = require('../store')
 const createCard = function (data) {
   return $.ajax({
     method: 'POST',
-    url: config.apiUrl + 'cards',
+    url: config.apiUrl + '/cards',
     headers: {
       Authorization: 'Bearer ' + store.user.token
     },
@@ -24,7 +24,7 @@ const index = function () {
 
 const del = function (id) {
   return $.ajax({
-    url: config.apiUrl + 'cards/' + id,
+    url: config.apiUrl + '/cards/' + id,
     method: 'DELETE',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -34,7 +34,7 @@ const del = function (id) {
 
 const show = function (id) {
   return $.ajax({
-    url: config.apiUrl + 'cards/' + id,
+    url: config.apiUrl + '/cards/' + id,
     method: 'GET',
     headers: {
       Authorization: 'Bearer ' + store.user.token
@@ -44,7 +44,7 @@ const show = function (id) {
 
 const update = function (id, formData) {
   return $.ajax({
-    url: config.apiUrl + 'cards/' + id,
+    url: config.apiUrl + '/cards/' + id,
     method: 'PATCH',
     headers: {
       Authorization: 'Bearer ' + store.user.token
